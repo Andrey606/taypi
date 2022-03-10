@@ -1,4 +1,3 @@
-# README
 # Testing graph ql
 
 source: https://www.apollographql.com/blog/community/backend/using-graphql-with-ruby-on-rails/

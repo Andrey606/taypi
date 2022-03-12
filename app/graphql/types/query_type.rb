@@ -11,9 +11,17 @@ module Types
     [Types::ItemType],
     null: false, 
     description: "Return a list of items"
-
     def items
       Item.all
     end 
+
+    # First describe the field signature:
+    field :item, Types::ItemType, "Return an item" do
+      argument :id, ID
+    end
+    # Then provide an implementation:
+    def item(id:)
+      Item.find(id)
+    end
   end
 end

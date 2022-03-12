@@ -73,3 +73,52 @@ end
 
 # Теперь у нас достаточно кода для запуска вашего сервера rails. Запустите rails в консоли и откройте GraphiQL:  http://localhost:3000/graphiql  в веб-браузере.
 
+# query request 
+# items
+{
+  items {
+    id
+    title
+    description
+    artist {
+      firstName
+      lastName
+      email
+      createdAt
+    }
+  }
+}
+
+# item
+{
+  item(id: 1) {
+    title
+    description
+    artist {
+      firstName
+      lastName
+      email
+      createdAt
+    }
+  }
+}
+
+### mutations
+# files
+1. mutations/create_item.rb
+2. mutations/base_mutation.rb
+3. types/mutation_type.rb
+
+# request
+mutation {
+  createItem(title: "test", artistId: 1, description: "", imageUrl: "") {
+    errors
+    item {
+      title
+      description
+      artist {
+        id
+      }
+    }
+  }
+}
